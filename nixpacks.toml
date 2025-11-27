@@ -1,0 +1,13 @@
+# nixpacks.toml
+
+[phases.setup]
+# Instala o PHP 8.1 e as extensões necessárias para o banco Neon
+nixPkgs = ["php81", "php81Extensions.pdo", "php81Extensions.pdo_pgsql"]
+
+[phases.build]
+# Instala dependências (mesmo que não tenhamos muitas, é bom padrão)
+cmds = ["composer install"]
+
+[start]
+# Comando para iniciar o servidor na porta correta
+cmd = "php -S 0.0.0.0:$PORT"
