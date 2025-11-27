@@ -1,0 +1,1 @@
+<?php echo "API do Relp está online!"; ?>
