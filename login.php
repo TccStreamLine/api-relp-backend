@@ -9,7 +9,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $host = "ep-damp-sound-ado6c3f7-pooler.c-2.us-east-1.aws.neon.tech";
 $db_name = "neondb";
 $user = "neondb_owner";
-$password = "npg_8E6ccUHIaxAs";
+$password = "npg_8E6cCUhIaxAs";
 $port = "5432"; 
 
 // String de Conexão (DSN) para PostgreSQL
