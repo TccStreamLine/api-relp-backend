@@ -1,13 +1,9 @@
-# nixpacks.toml
-
 [phases.setup]
-# Instala o PHP 8.1 e as extensões necessárias para o banco Neon
-nixPkgs = ["php81", "php81Extensions.pdo", "php81Extensions.pdo_pgsql"]
+# AQUI ESTAVA O ERRO: Faltava o composer na lista
+nixPkgs = ["php81", "php81Extensions.pdo", "php81Extensions.pdo_pgsql", "php81Packages.composer"]
 
 [phases.build]
-# Instala dependências (mesmo que não tenhamos muitas, é bom padrão)
-cmds = ["composer install"]
+cmds = ["composer install --ignore-platform-reqs"]
 
 [start]
-# Comando para iniciar o servidor na porta correta
 cmd = "php -S 0.0.0.0:$PORT"
